@@ -25,6 +25,16 @@
             "name": "Yahoo",
             "baseurl": "www.yahoo.com",
             "searchurl": "http://search.yahoo.com/search?p={0}"
-        }      
+        },
+        {
+            "name": "sitepoint",
+            "baseurl": "reference.sitepoint.com",
+            "searchurl": "http://reference.sitepoint.com/html/{0}"
+        },
+        {
+            "name": "When can I use...",
+            "baseurl": "caniuse.com",
+            "searchurl": "http://caniuse.com/#search={0}"
+        }
     ]
 }
