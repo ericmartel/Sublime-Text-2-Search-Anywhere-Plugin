@@ -35,6 +35,11 @@
             "name": "When can I use...",
             "baseurl": "caniuse.com",
             "searchurl": "http://caniuse.com/#search={0}"
+        },
+        {
+            "name": "Mozilla Developer Network",
+            "baseurl": "developer.mozilla.org",
+            "searchurl": "https://developer.mozilla.org/en-US/search?q={0}"
         }
     ]
 }
