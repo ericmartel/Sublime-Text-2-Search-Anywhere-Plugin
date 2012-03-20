@@ -40,6 +40,16 @@
             "name": "Mozilla Developer Network",
             "baseurl": "developer.mozilla.org",
             "searchurl": "https://developer.mozilla.org/en-US/search?q={0}"
+        },
+        {
+            "name": "Ruby on Rails",
+            "baseurl": "api.rubyonrails.org",
+            "searchurl": "http://api.rubyonrails.org/?q={0}"
+        },
+        {
+            "name": "Ruby Doc",
+            "baseurl": "www.ruby-doc.org",
+            "searchurl": "http://www.ruby-doc.org/search.html?cx=011815814100681837392%3Awnccv6st5qk&q={0}&sa=Search&cof=FORID%3A9"
         }
     ]
 }

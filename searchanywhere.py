@@ -71,7 +71,7 @@ class SearchAnywhereFromSelectionAskCommand(sublime_plugin.TextCommand):
         for selection in self.view.sel():
             # if the user didn't select anything, search the currently highlighted word
             if selection.empty():
-                text = self.view.word(selection)
+                selection = self.view.word(selection)
 
             text = self.view.substr(selection)
             SearchFor(self.view, text, entry.get('searchurl'))
@@ -81,7 +81,7 @@ class SearchAnywhereFromInputAskCommand(sublime_plugin.WindowCommand):
         ShowSearchEnginesList(self.window, self.on_select_done)
 
     def on_select_done(self, picked):
-        self.entry = GetSearchEngineEntry()
+        self.entry = GetSearchEngineEntry(picked)
 
         self.window.show_input_panel('Search on ' + self.entry.get('name') + ' for', '', self.on_done, self.on_change, self.on_cancel)
 
@@ -100,8 +100,8 @@ class SearchAnywhereFromSelectionCommand(sublime_plugin.TextCommand):
         for selection in self.view.sel():
             # if the user didn't select anything, search the currently highlighted word
             if selection.empty():
-                text = self.view.word(selection)
-
+                selection = self.view.word(selection)
+            
             text = self.view.substr(selection)
             SearchFor(self.view, text, None)
 
