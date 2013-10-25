@@ -9,7 +9,10 @@ import threading
 import os
 import json
 
-searchanywhere_dir = os.getcwdu()
+searchanywhere_dir = os.getcwd()
+
+if sys.version_info.major == 2:
+    searchanywhere_dir = os.getcwdu();
 
 # Helper functions
 def SearchFor(view, text, searchurl):
