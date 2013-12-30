@@ -8,13 +8,10 @@ import webbrowser
 import threading
 import os
 import json
-
-searchanywhere_dir = os.getcwd()
-
 import sys
 
-if sys.version_info.major == 2:
-    searchanywhere_dir = os.getcwdu();
+from os.path import dirname, realpath
+searchanywhere_dir = dirname(realpath(__file__))
 
 # Helper functions
 def SearchFor(view, text, searchurl):
