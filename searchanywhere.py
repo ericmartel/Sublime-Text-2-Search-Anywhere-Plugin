@@ -68,8 +68,10 @@ class SearchAnywhereFromSelectionAskCommand(sublime_plugin.TextCommand):
         ShowSearchEnginesList(self.view.window(), self.on_select_done)
 
     def on_select_done(self, picked):
-        entry = GetSearchEngineEntry(picked)
+        if picked == -1:
+            return
 
+        entry = GetSearchEngineEntry(picked)
         for selection in self.view.sel():
             # if the user didn't select anything, search the currently highlighted word
             if selection.empty():
@@ -83,6 +85,9 @@ class SearchAnywhereFromInputAskCommand(sublime_plugin.WindowCommand):
         ShowSearchEnginesList(self.window, self.on_select_done)
 
     def on_select_done(self, picked):
+        if picked == -1:
+            return
+
         self.entry = GetSearchEngineEntry(picked)
 
         self.window.show_input_panel('Search on ' + self.entry.get('name') + ' for', '', self.on_done, self.on_change, self.on_cancel)
@@ -131,6 +136,9 @@ class SearchAnywhereSelectDefaultSearchEngineCommand(sublime_plugin.WindowComman
         ShowSearchEnginesList(self.window, self.on_select_done)
 
     def on_select_done(self, picked):
+        if picked == -1:
+            return
+            
         entry = GetSearchEngineEntry(picked)
 
         settings = sublime.load_settings(__name__ + '.sublime-settings')
@@ -145,6 +153,9 @@ class SearchAnywhereSelectSearchEngineForTypeCommand(sublime_plugin.WindowComman
         ShowSearchEnginesList(self.window, self.on_select_done)
 
     def on_select_done(self, picked):
+        if picked == -1:
+            return
+            
         entry = GetSearchEngineEntry(picked)
 
         settings = sublime.load_settings(__name__ + '.sublime-settings')
