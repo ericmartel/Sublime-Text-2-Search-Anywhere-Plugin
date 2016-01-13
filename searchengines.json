@@ -7,9 +7,14 @@
             "searchurl": "http://www.google.com/search?q={0}"
         },
         {
-        	"name": "Stack Overflow",
-        	"baseurl": "www.stackoverflow.com",
-        	"searchurl": "http://stackoverflow.com/search?tab=relevance&q={0}"
+            "name": "Github",
+            "baseurl": "www.github.com",
+            "searchurl": "https://github.com/search?utf8=%E2%9C%93&q={0}"
+        },
+        {
+            "name": "Stack Overflow",
+            "baseurl": "www.stackoverflow.com",
+            "searchurl": "http://stackoverflow.com/search?tab=relevance&q={0}"
         },
         {
             "name": "PHP",
